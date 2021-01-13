@@ -1,4 +1,4 @@
-# Proyecto de Ingenieria de Software I 🖥
+# Project of Software Engineering 🖥
 
 This project is developed in the subject of Software Engineering I and II
 
