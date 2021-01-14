@@ -1,10 +1,10 @@
-import Nav from '../components/ui/navbar'
 import React from "react";
+import Navbar from "../components/ui/navbar/Navbar";
 
 export default function Home() {
   return (
 
-      <Nav/>
+      <Navbar/>
 
   );
 }
