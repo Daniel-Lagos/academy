@@ -15,3 +15,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+contenedor{
+  display: inline-block;
+}

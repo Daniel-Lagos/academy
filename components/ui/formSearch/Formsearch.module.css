@@ -1,0 +1,10 @@
+.main {
+    margin-top: 10px;
+}
+
+.main input,
+.main input:focus{
+    background: rgb(47, 52, 90);
+    border: inherit;
+    color: #A1A1A1;
+}
