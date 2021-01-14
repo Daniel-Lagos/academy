@@ -1,10 +1,10 @@
-.main {
-    margin-top: 10px;
+.main form{
+    margin-top: 25px;
 }
 
 .main input,
 .main input:focus{
     background: rgb(47, 52, 90);
     border: inherit;
-    color: #A1A1A1;
+    box-shadow: 0 10px 25px rgb(28,30,57);
 }
