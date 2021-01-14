@@ -1,10 +1,12 @@
 import React from "react";
 import Navbar from "../components/ui/navbar/Navbar";
 import FormSearch from "../components/ui/formSearch/FormSearch";
+import AuthScreen from "../components/auth/AuthScreen";
 
 export default function Home() {
     return (
         <>
+            <AuthScreen/>
             <div className='row'>
                 <div className='col-2'>
                     <Navbar/>
@@ -16,12 +18,6 @@ export default function Home() {
                     //TODO
                 </div>
             </div>
-
-
-
-
-
-
         </>
     );
 }

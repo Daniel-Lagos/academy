@@ -1,0 +1,61 @@
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 5rem 5rem;
+    background: #4b6584;
+}
+
+.authContent {
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #8854d0;
+    height: 45rem;
+    width: 30rem;
+    padding: 4rem 2rem;
+}
+
+.loginContent {
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+    width: 100%;
+
+}
+
+.titleLogin {
+    margin: 2rem;
+}
+
+.inputLogin {
+    border: none;
+    background: transparent;
+    box-shadow: 0 2px 0 #A1A1A1;
+    font-size: 24px;
+    height: 4rem;
+    margin: 1rem 0;
+    outline: none;
+    width: 100%;
+}
+
+
+.buttonLogin {
+    background: #3867d6;
+    border: none;
+    color: white;
+    font-size: 20px;
+    height: 4rem;
+    width: 100%;
+}
+
+.passwordText {
+    text-align: end;
+}
