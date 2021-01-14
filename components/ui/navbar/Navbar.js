@@ -25,8 +25,6 @@ export default function Navbar() {
                             <a className='nav-link' title='Calendario'>Calendar </a>
                         </Link>
                     </div>
-
-
                 </nav>
             </div>
         </>
