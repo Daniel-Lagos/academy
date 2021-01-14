@@ -1,0 +1,17 @@
+.screen {
+    width: 100vw;
+    height: 100vh;
+    padding: 5rem 5rem;
+    background: #4b6584;
+}
+
+.auth {
+    background: #a5b1c2;
+
+}
+
+.registerContent {
+    display: flex;
+    flex-direction: column;
+
+}
