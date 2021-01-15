@@ -1,4 +1,6 @@
 import Styles from './AuthScreen.module.css';
+import Icon from "@mdi/react";
+import {mdiAccountCircle} from '@mdi/js';
 
 const AuthScreen = () => {
 
@@ -11,17 +13,28 @@ const AuthScreen = () => {
         <div className={Styles.authContent}>
             <h2 className={Styles.titleLogin}>My account</h2>
             <div className={Styles.loginContent}>
+                <Icon className={Styles.photo} path={mdiAccountCircle}/>
                 <form>
-                    <input className={Styles.inputLogin} placeholder="Login"/>
+                    <input
+                        className={Styles.inputLogin}
+                        placeholder="Login"
+                        type="email"
+                    />
                     <br/>
-                    <input className={Styles.inputLogin} placeholder="Password"/>
-                    <p className={Styles.passwordText}> Forgot Password?</p>
+                    <input
+                        className={Styles.inputLogin}
+                        placeholder="Password"
+                        type="password"
+                    />
+                    <p className={Styles.passwordText}><a href="www.google.com"
+                                                          style={{color: "black"}}> Forgot
+                        Password?</a></p>
+
                     <button
                         className={Styles.buttonLogin}
                         type="onSubmit"
                         onClick={handleSubmit}
                     >
-                        <i className="fas fa-sign-out-alt"/>
                         <span>Sign In</span>
                     </button>
                 </form>

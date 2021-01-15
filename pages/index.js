@@ -6,7 +6,6 @@ import AuthScreen from "../components/auth/AuthScreen";
 export default function Home() {
     return (
         <>
-            <AuthScreen/>
             <div className='row'>
                 <div className='col-2'>
                     <Navbar/>

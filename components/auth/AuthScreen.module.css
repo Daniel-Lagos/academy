@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     padding: 5rem 5rem;
-    background: #4b6584;
+    background: #a5b1c2;
 }
 
 .authContent {
@@ -19,7 +19,7 @@
     padding: 4rem 2rem;
 }
 
-.loginContent {
+.authContent .loginContent {
     background: white;
     border-radius: 3px;
     display: flex;
@@ -27,9 +27,21 @@
     height: auto;
     margin-top: 3rem;
     padding: 2rem 1rem;
+    position: relative;
     width: 100%;
 
 }
+
+.authContent .loginContent .photo{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    max-height: 80px;
+
+}
+
 
 .titleLogin {
     margin: 2rem;
@@ -41,7 +53,7 @@
     box-shadow: 0 2px 0 #A1A1A1;
     font-size: 24px;
     height: 4rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     outline: none;
     width: 100%;
 }
