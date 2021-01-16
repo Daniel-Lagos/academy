@@ -6,10 +6,12 @@
 }
 
 .test {
+    text-align: center;
     margin: 20px 30px;
 }
 
 .test h6 {
+    text-align: left;
     color: whitesmoke;
     margin: 10px;
 }

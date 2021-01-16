@@ -10,15 +10,13 @@ export default function BarInfo({name, url}) {
                 <h6>Academy profile</h6>
                 <div className={Styles.imageCenter}>
                     <Image className={Styles.image} src='/profile.jpg' width={160} height={160}/>
-                    <br/>
-                    <text>{name}</text>
-                    <br/>
-                    <Link href={url} prefetch>
-                        <a>
-                            Personal Profile
-                        </a>
-                    </Link>
                 </div>
+                <text>{name}</text><br/>
+                <Link href={url} prefetch>
+                    <a>
+                        Personal Profile
+                    </a>
+                </Link>
             </div>
             <div className={Styles.second}>
                 <h1>Panel 1</h1>
