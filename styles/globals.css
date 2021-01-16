@@ -1,17 +1,48 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  background: rgb(37,40,75);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    padding: 0;
+    margin: 0;
+    max-width: 99vw;
+    background: rgb(37, 40, 75);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background: dimgrey;
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+body::-webkit-scrollbar-track {
+    background: #a5b1c2;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+body::-webkit-scrollbar-track:hover,
+body::-webkit-scrollbar-track:active {
+    background: grey;
+}
+
 a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }

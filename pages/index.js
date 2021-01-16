@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "../components/ui/navbar/Navbar";
 import FormSearch from "../components/ui/formSearch/FormSearch";
+import AuthRegister from "../components/auth/AuthRegister";
+import AuthScreen from "../components/auth/AuthScreen";
 
 export default function Home() {
     return (
@@ -16,12 +18,6 @@ export default function Home() {
                     //TODO
                 </div>
             </div>
-
-
-
-
-
-
         </>
     );
 }
