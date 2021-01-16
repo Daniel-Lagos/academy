@@ -1,0 +1,46 @@
+.main {
+    height: 100vh;
+    display: grid;
+    background-color: rgb(31, 34, 66);
+    border-top-left-radius: 20px;
+}
+
+.test {
+    margin: 20px 30px;
+}
+
+.test h6 {
+    color: whitesmoke;
+    margin: 10px;
+}
+.test text{
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.imageCenter{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.second {
+    margin: 10px 30px;
+    background-color: rgb(64, 73, 122);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgb(28, 30, 57);
+}
+
+.second h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+.test a{
+    text-decoration: none;
+    color: rgb(103,89,136);
+    font-weight: bold;
+}
