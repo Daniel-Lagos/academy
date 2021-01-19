@@ -8,6 +8,8 @@
 .test {
     text-align: center;
     margin: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 100px rgb(28, 30, 57);
 }
 
 .test h6 {

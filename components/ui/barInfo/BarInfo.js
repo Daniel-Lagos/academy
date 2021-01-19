@@ -12,7 +12,7 @@ export default function BarInfo({name, url}) {
                     <Image className={Styles.image} src='/profile.jpg' width={160} height={160}/>
                 </div>
                 <text>{name}</text><br/>
-                <Link href={url} prefetch>
+                <Link href={url} prefetch={true}>
                     <a>
                         Personal Profile
                     </a>
