@@ -4,6 +4,7 @@ import FormSearch from "../components/ui/formSearch/FormSearch";
 import AuthRegister from "../components/auth/AuthRegister";
 import AuthScreen from "../components/auth/AuthScreen";
 import BarInfo from "../components/ui/barInfo/BarInfo";
+import VideoInfo from "../components/ui/videoInfo/VideoInfo";
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
                 </div>
                 <div className='col-sm-7'>
                     <FormSearch/>
+                    <VideoInfo/>
                 </div>
                 <div className='col-sm'>
                     <BarInfo name={'Arge Niño'} url={'https://github.com/ArgeNH'}/>

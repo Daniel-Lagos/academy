@@ -1,0 +1,15 @@
+.main{
+    border-radius: 10px;
+    background-color: rgb(44,49,91);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cont{
+    margin: 10px;
+}
+
+.image {
+    object-fit: cover;
+    border-radius: 10px;
+}
