@@ -15,7 +15,7 @@ export default function Home() {
                 </div>
                 <div className='col-sm-7'>
                     <FormSearch/>
-                    <VideoInfo/>
+                    <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Ing. Riaño'} duration={'25:00'}/>
                 </div>
                 <div className='col-sm'>
                     <BarInfo name={'Arge Niño'} url={'https://github.com/ArgeNH'}/>
