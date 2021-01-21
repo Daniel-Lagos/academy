@@ -6,10 +6,21 @@
 }
 
 .cont{
-    margin: 10px;
+    padding: 20px 10px 20px 40px;
+}
+
+.contTwo{
+    padding: 10px;
+}
+.contTwo h4{
+    color: whitesmoke;
+}
+
+.contTwo p{
+    color:rgb(128,129,145);
 }
 
 .image {
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
 }
