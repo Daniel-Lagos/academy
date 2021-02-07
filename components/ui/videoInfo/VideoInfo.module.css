@@ -1,0 +1,30 @@
+.main{
+    border-radius: 10px;
+    background-color: rgb(44,49,91);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cont{
+    padding: 20px 10px 20px 40px;
+}
+
+.contTwo{
+    padding: 10px;
+}
+.contTwo h4{
+    color: whitesmoke;
+}
+
+.contTwo h6{
+    color: whitesmoke;
+}
+
+.contTwo p{
+    color:rgb(128,129,145);
+}
+
+.image {
+    object-fit: cover;
+    border-radius: 15px;
+}
