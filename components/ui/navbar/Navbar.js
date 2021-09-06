@@ -10,7 +10,7 @@ export default function Navbar() {
                     <div className={Styles.sep}>
                         <Link href='/'>
                             <a className='nav-link ' title='Principal Page' target="_blank"
-                               rel="noopener noreferrer">Sin Nombre </a>
+                               rel="noopener noreferrer">ACADEMY</a>
                         </Link>
 
                         <Link href='/'>

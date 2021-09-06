@@ -6,21 +6,18 @@ const AuthRegister = () => {
         console.log('Entro')
     }
     return (
-        <form>
+        <form className={Styles.inputLogin}>
             <input
-                className={Styles.inputLogin}
                 placeholder="Name"
                 type="text"
             />
             <br/>
             <input
-                className={Styles.inputLogin}
                 placeholder="Surname"
                 type="text"
             />
             <br/>
             <input
-                className={Styles.inputLogin}
                 placeholder="Password"
                 type="password"
             />

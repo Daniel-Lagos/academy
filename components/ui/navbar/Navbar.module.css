@@ -1,8 +1,8 @@
 .div nav {
     height: 100vh;
+    border-top-right-radius: 20px;
     background-color: rgb(31, 34, 66);
     backdrop-filter: blur(8px);
-    box-shadow: 0 0 0 1px #A1A1A1;
 }
 
 .sep {
