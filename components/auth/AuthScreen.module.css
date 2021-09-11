@@ -10,9 +10,8 @@
 
 .authContent {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 0.7fr 0.5fr;
     grid-gap: 15px;
-    align-items: center;
     background: aliceblue;
     padding: 2rem;
     border-radius: 10px;
@@ -44,13 +43,13 @@
     text-align: center;
 }
 
-.inputLogin input{
+.inputLogin input {
     border: none;
     background: transparent;
-    box-shadow: 0 2px 0 #A1A1A1;
-    font-size: 24px;
-    height: 4rem;
-    margin: 1.5rem 0;
+    box-shadow: 0 2px 0 var(--primary-color);
+    font-size: 20px;
+    height: 2rem;
+    margin: 1.2rem 0;
     outline: none;
     width: 100%;
 }
@@ -70,6 +69,6 @@
     text-align: end;
 }
 
-.image{
+.image {
     object-fit: cover;
 }

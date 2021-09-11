@@ -21,6 +21,14 @@ const AuthRegister = () => {
                 placeholder="Password"
                 type="password"
             />
+            <input
+                placeholder="Email"
+                type="email"
+            />
+            <input
+                placeholder="Role"
+                type="text"
+            />
             <button
                 className={Styles.buttonLogin}
                 type="onSubmit"

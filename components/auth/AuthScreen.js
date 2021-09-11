@@ -19,7 +19,7 @@ const AuthScreen = () => {
                     </div>
                 </div>
                 <div className={Styles.image}>
-                    <img src="https://i2.wp.com/imagenesparapeques.com/wp-content/uploads/2021/01/Among-Us-imagenes-en-png.png?fit=1288%2C1666&ssl=1" alt={'LOL'} width={'490px'} height={'580px'}/>
+                  <h1>Image Here! Maybe</h1>
                 </div>
             </div>
         </div>
