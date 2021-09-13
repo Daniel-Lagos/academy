@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import Styles from './VideoInfo.module.css';
 
-export default function VideoInfo({views,likes,nameAuthor,duration}) {
+export default function VideoInfo(props) {
     return (
         <>
             <div className={Styles.main}>
@@ -13,9 +13,9 @@ export default function VideoInfo({views,likes,nameAuthor,duration}) {
                     </div>
                     <div className={`${Styles.contTwo} col-sm-8`}>
                         <h4>Titulo del video segun la categoria desde la API de Youtube 🚀</h4>
-                        <p>👁‍🗨 {views} views &nbsp;&nbsp;&nbsp;&nbsp; 👍🏻 {likes} likes</p>
-                            <h6>Autor: {nameAuthor}</h6>
-                            <h6>Duración: {duration} min</h6>
+                        <p>👁‍🗨 {props.views} views &nbsp;&nbsp;&nbsp;&nbsp; 👍🏻 {props.likes} likes</p>
+                            <h6>Autor: {props.nameAuthor}</h6>
+                            <h6>Duración: {props.duration} min</h6>
                     </div>
                 </div>
             </div>
