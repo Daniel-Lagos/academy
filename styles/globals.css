@@ -1,3 +1,8 @@
+:root {
+    --primary-color-a: rgba(37, 40, 75, 0.9);
+    --primary-color: rgba(37, 40, 75, 1);
+}
+
 html,
 body {
     padding: 0;
@@ -27,6 +32,7 @@ body::-webkit-scrollbar-thumb:hover {
 body::-webkit-scrollbar-thumb:active {
     background-color: #999999;
 }
+
 body::-webkit-scrollbar-track {
     background: #a5b1c2;
     border-radius: 4px;

@@ -8,17 +8,22 @@ const AuthScreen = () => {
 
     const value = false;
 
-    return (<div className={Styles.screen}>
-        <div className={Styles.authContent}>
-            <h2 className={Styles.titleLogin}>My account</h2>
-            <div className={Styles.loginContent}>
-                <Icon className={Styles.photo} path={mdiAccountCircle}/>
-                {
-                    (value ? <AuthLogin/> : <AuthRegister/>)
-                }
+    return (
+        <div className={Styles.screen}>
+            <div className={Styles.authContent}>
+                <div>
+                    <h2 className={Styles.titleLogin}>{(value ? 'My Account' : 'Create Account')}</h2>
+                    <div className={Styles.loginContent}>
+                        <Icon className={Styles.photo} path={mdiAccountCircle}/>
+                        {(value ? <AuthLogin/> : <AuthRegister/>)}
+                    </div>
+                </div>
+                <div className={Styles.image}>
+                  <h1>Image Here! Maybe</h1>
+                </div>
             </div>
         </div>
-    </div>);
+    );
 }
 
 export default AuthScreen;
