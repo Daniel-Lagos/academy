@@ -5,11 +5,12 @@ import { HomeScreen } from '../blocks/home';
 
 export default function Home() {
   const [session, setSession] = useState({});
+
   return (
     <>
       <SessionContext.Provider value={{ session, setSession }}>
         {
-          session ? <AuthScreen/> : <HomeScreen/>
+          !session.email ? <AuthScreen/> : <HomeScreen/>
         }
       </SessionContext.Provider>
     </>

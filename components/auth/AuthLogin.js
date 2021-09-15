@@ -1,23 +1,25 @@
 import Styles from './AuthScreen.module.css';
 import { useContext } from 'react';
 import { SessionContext } from '../../providers/sessionContext';
-import fetch from 'isomorphic-fetch';
 import { useForm } from '../../hooks/useForm';
 
 const AuthLogin = () => {
-  const { session, setSession } = useContext(SessionContext);
+  const { setSession } = useContext(SessionContext);
 
   const [formLoginValues, handleLoginInputChange] = useForm({
     email: '',
     password: ''
   });
 
-  console.log(formLoginValues.email);
-  console.log(formLoginValues.password);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('', {});
+    // const response = await fetch('', {});
+
+    setSession(
+      {
+        email: formLoginValues.email,
+        password: formLoginValues.password
+      });
   };
 
   return (
