@@ -1,34 +1,48 @@
-import Styles from "./AuthScreen.module.css";
+import Styles from './AuthScreen.module.css';
+import { useContext, useState } from 'react';
+import { SessionContext } from '../../providers/sessionContext';
+import fetch from 'isomorphic-fetch';
 
 const AuthLogin = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Entro')
-    }
-    return (
-        <form className={Styles.inputLogin}>
-            <input
-                placeholder="Login"
-                type="email"
-            />
-            <br/>
-            <input
-                placeholder="Password"
-                type="password"
-            />
-            <p className={Styles.passwordText}><a href="www.google.com"
-                                                  style={{color: "black"}}> Forgot
-                Password?</a></p>
+  const { session, setSession } = useContext(SessionContext);
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
-            <button
-                className={Styles.buttonLogin}
-                type="onSubmit"
-                onClick={handleSubmit}
-            >
-                <span>Sign In</span>
-            </button>
-        </form>
-    );
-}
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('',{});
+  };
+
+  const handleInputEmail = () => {
+
+  };
+
+  return (
+    <form className={Styles.inputLogin}>
+      <input
+        name={'email'}
+        placeholder="Email"
+        type="email"
+      />
+      <br/>
+      <input
+        name={'password'}
+        placeholder="Password"
+        type="password"
+      />
+      <p className={Styles.passwordText}><a href="www.google.com"
+                                            style={{ color: 'black' }}> Forgot
+        Password?</a></p>
+
+      <button
+        className={Styles.buttonLogin}
+        type="onSubmit"
+        onClick={handleSubmit}
+      >
+        <span>Log in</span>
+      </button>
+    </form>
+  );
+};
 
 export default AuthLogin;
