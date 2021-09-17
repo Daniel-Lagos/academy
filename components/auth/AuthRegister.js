@@ -16,7 +16,6 @@ const AuthRegister = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         fetch('https://backend-academy.herokuapp.com/api/auth/new',
             {
                 method: 'POST',
@@ -28,7 +27,7 @@ const AuthRegister = () => {
                     surname: formRegisterValues.surname,
                     password: formRegisterValues.password,
                     email: formRegisterValues.email,
-                    role: formRegisterValues.role
+                    role: 'User_Role'
                 })
             }).then(response => response.json())
             .then(data => {
@@ -39,7 +38,7 @@ const AuthRegister = () => {
                         surname: formRegisterValues.surname,
                         password: formRegisterValues.password,
                         email: formRegisterValues.email,
-                        role: 'User_role'
+                        role: 'User_Role'
                     });
                 } else {
                     console.log(data.message);
@@ -95,5 +94,4 @@ const AuthRegister = () => {
         </form>
     );
 }
-
 export default AuthRegister;

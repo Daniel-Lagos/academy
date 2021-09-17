@@ -54,15 +54,18 @@
     width: 100%;
 }
 
-
 .buttonLogin {
     background: var(--primary-color);
     border: none;
     border-radius: 10px;
     color: white;
     font-size: 20px;
-    height: 4rem;
+    height: 3.5rem;
     width: 100%;
+}
+
+.buttonLogin:disabled {
+    background: aqua;
 }
 
 .passwordText {
@@ -71,4 +74,9 @@
 
 .image {
     object-fit: cover;
+}
+
+.error {
+    font-size: 12px;
+    color: red;
 }
