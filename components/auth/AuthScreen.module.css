@@ -5,27 +5,29 @@
     width: 100vw;
     height: 100vh;
     padding: 5rem 5rem;
-    background: var(--primary-color);
+    background-image: url("https://images.unsplash.com/photo-1465066989788-372fcdde2f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80");
+    background-size: cover;
 }
 
 .authContent {
     display: grid;
-    grid-template-columns: 0.7fr 0.5fr;
+    grid-template-columns: 1fr;
     grid-gap: 15px;
-    background: aliceblue;
+    background-color: rgba(240, 248, 255, 0.4);
+    backdrop-filter: blur(8px);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .loginContent {
-    background: white;
-    border-radius: 10px;
+    background-color: rgba(37, 40, 75, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     height: auto;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     padding: 2rem 1rem;
-    position: relative;
     width: 100%;
 }
 
@@ -35,10 +37,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-height: 80px;
+    color: aliceblue;
 }
 
 
 .titleLogin {
+    color: aliceblue;
     margin: 2rem;
     text-align: center;
 }
@@ -48,10 +52,14 @@
     background: transparent;
     box-shadow: 0 2px 0 var(--primary-color);
     font-size: 20px;
-    height: 2rem;
+    height: 1.5rem;
     margin: 1.2rem 0;
     outline: none;
     width: 100%;
+}
+
+.inputLogin input:nth-child(7) {
+    display: none;
 }
 
 .buttonLogin {
@@ -64,19 +72,12 @@
     width: 100%;
 }
 
-.buttonLogin:disabled {
-    background: aqua;
-}
-
 .passwordText {
     text-align: end;
 }
 
-.image {
-    object-fit: cover;
-}
-
 .error {
-    font-size: 12px;
+    text-decoration: underline red;
+    font-size: 14px;
     color: red;
 }

@@ -16,34 +16,39 @@ const AuthRegister = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        fetch('https://backend-academy.herokuapp.com/api/auth/new',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: formRegisterValues.name,
-                    surname: formRegisterValues.surname,
-                    password: formRegisterValues.password,
-                    email: formRegisterValues.email,
-                    role: 'User_Role'
-                })
-            }).then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    console.log('Registro exitoso')
-                    setSession({
+        if (formRegisterValues.name === '' || formRegisterValues.surname === '' || formRegisterValues.password === '' ||
+            formRegisterValues.email === '') {
+            console.log('Campos vacios')
+        } else {
+            fetch('https://backend-academy.herokuapp.com/api/auth/new',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
                         name: formRegisterValues.name,
                         surname: formRegisterValues.surname,
                         password: formRegisterValues.password,
                         email: formRegisterValues.email,
                         role: 'User_Role'
-                    });
-                } else {
-                    console.log(data.message);
-                }
-            })
+                    })
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('Registro exitoso')
+                        setSession({
+                            name: formRegisterValues.name,
+                            surname: formRegisterValues.surname,
+                            password: formRegisterValues.password,
+                            email: formRegisterValues.email,
+                            role: 'User_Role'
+                        });
+                    } else {
+                        console.log(data.message);
+                    }
+                })
+        }
     }
     return (
         <form className={Styles.inputLogin}>
@@ -91,6 +96,9 @@ const AuthRegister = () => {
             >
                 <span>Sign In</span>
             </button>
+            {formRegisterValues.name === '' || formRegisterValues.surname === '' ||
+            formRegisterValues.password === '' || formRegisterValues.email === '' ?
+                <span className={Styles.error}>Rellene los campos vacios</span> : ''}
         </form>
     );
 }
