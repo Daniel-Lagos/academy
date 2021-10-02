@@ -17,13 +17,10 @@ export default function Navbar() {
                             <a className='nav-link' title='Proyecto'>Project </a>
                         </Link>
                         <Link href='/'>
-                            <a className='nav-link' title='Tareas'>My task </a>
-                        </Link>
-                        <Link href='/'>
                             <a className='nav-link' title='Subir archivos'>Upload</a>
                         </Link>
-                        <Link href='/'>
-                            <a className='nav-link' title='Calendario'>Calendar </a>
+                        <Link href='/Profile'>
+                            <a className='nav-link' title='Calendario'>Profile</a>
                         </Link>
                     </div>
                 </nav>

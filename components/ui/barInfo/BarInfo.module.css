@@ -3,7 +3,7 @@
     display: grid;
     background-color: rgb(31, 34, 66);
     border-top-left-radius: 20px;
-    position: -webkit-sticky;
+    grid-template-rows: 1fr 2fr;
     position: sticky;
     top: 0;
 }
@@ -20,7 +20,7 @@
     color: whitesmoke;
     margin: 10px;
 }
-.test text{
+.test span{
     color: whitesmoke;
     font-weight: bold;
 }
@@ -37,9 +37,7 @@
 
 .second {
     margin: 10px 30px;
-    background-color: rgb(64, 73, 122);
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgb(28, 30, 57);
 }
 
 .second h1 {
@@ -50,4 +48,29 @@
     text-decoration: none;
     color: rgb(103,89,136);
     font-weight: bold;
+}
+
+.inputLogin input {
+    border: none;
+    background: transparent;
+    box-shadow: 0 2px 0 var(--primary-color);
+    font-size: 20px;
+    height: 1.5rem;
+    margin: 1.2rem 0;
+    outline: none;
+    width: 100%;
+}
+
+.inputLogin input:nth-child(7) {
+    display: none;
+}
+
+.buttonLogin {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    height: 3.5rem;
+    width: 100%;
 }

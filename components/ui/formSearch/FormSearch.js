@@ -1,7 +1,7 @@
 import Styles from './Formsearch.module.css';
 import React from "react";
 
-export default function Formsearch(){
+export default function FormSearch(){
 
     return(
         <div className={Styles.main}>

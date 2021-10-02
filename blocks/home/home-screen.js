@@ -1,32 +1,53 @@
 import VideoInfo from '../../components/ui/videoInfo/VideoInfo';
-import Formsearch from '../../components/ui/formSearch/FormSearch';
+import FormSearch from '../../components/ui/formSearch/FormSearch';
 import Navbar from '../../components/ui/navbar/Navbar';
 import BarInfo from '../../components/ui/barInfo/BarInfo';
+import {useContext} from 'react';
+import {SessionContext} from '../../providers/sessionContext';
+import {useForm} from '../../hooks/useForm';
+import {Container, Row, Col} from "react-bootstrap";
 
 export const HomeScreen = () => {
-  return (
-    <div className="row">
-      <div className="col-sm-2">
-        <Navbar/>
-      </div>
-      <div className="col-sm-7">
-        <Formsearch/>
-        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                   duration={'25:00'}/>
-        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                   duration={'25:00'}/>
-        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                   duration={'25:00'}/>
-        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                   duration={'25:00'}/>
-        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                   duration={'25:00'}/>
-        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                   duration={'25:00'}/>
-      </div>
-      <div className="col-sm">
-        <BarInfo name={'Arge Niño'} url={'https://github.com/Daniel-Lagos'}/>
-      </div>
-    </div>
-  );
+
+    const {session, setSession} = useContext(SessionContext);
+    let id = session.uid;
+    let name = session.name;
+    let surname = session.surname;
+    let email = session.email;
+    let role = session.role;
+
+    if (role === 'User_Role') {
+        role = 'Estudiante';
+    } else {
+        role = 'Docente';
+    }
+
+    return (
+            <Container fluid={true}>
+                <Row>
+                    <Col>
+                        <Navbar/>
+                    </Col>
+                    <Col xs={7}>
+                        <FormSearch/>
+                        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
+                                   duration={'25:00'}/>
+                        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
+                                   duration={'25:00'}/>
+                        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
+                                   duration={'25:00'}/>
+                        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
+                                   duration={'25:00'}/>
+                        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
+                                   duration={'25:00'}/>
+                        <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
+                                   duration={'25:00'}/>
+                    </Col>
+                    <Col xs={3}>
+                        <BarInfo nick={`${name} ${surname}`}
+                                 roleF={role}/>
+                    </Col>
+                </Row>
+            </Container>
+    );
 };
