@@ -53,7 +53,7 @@ const AuthLogin = () => {
                 placeholder="Email"
                 type="email"
                 value={formLoginValues.email}
-                onChange={handleLoginInputChange}
+                onChange={handleLoginInputChange} required
             />
             <br/>
             <input
@@ -61,7 +61,7 @@ const AuthLogin = () => {
                 placeholder="Password"
                 type="password"
                 value={formLoginValues.password}
-                onChange={handleLoginInputChange}
+                onChange={handleLoginInputChange} required
             />
             <p className={Styles.passwordText}><a href="www.google.com"
                                                   style={{color: 'black'}}> Forgot

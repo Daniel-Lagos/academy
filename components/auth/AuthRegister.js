@@ -77,7 +77,7 @@ const AuthRegister = () => {
             />
             <input
                 name={'email'}
-                placeholder="Email"
+                placeholder="name@example.com"
                 type="email"
                 value={formRegisterValues.email}
                 onChange={handRegisterInputChangue}

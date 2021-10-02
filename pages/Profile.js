@@ -6,7 +6,7 @@ import {SessionContext} from '../providers/sessionContext';
 
 const Profile = () => {
 
-    const session = useContext(SessionContext);
+    const {session} = useContext(SessionContext);
     let name = session.name;
     let surname = session.surname;
     let email = session.email;
