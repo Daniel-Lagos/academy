@@ -38,11 +38,11 @@ const AuthRegister = () => {
                     if (data.success) {
                         console.log('Registro exitoso')
                         setSession({
-                            name: formRegisterValues.name,
-                            surname: formRegisterValues.surname,
-                            password: formRegisterValues.password,
-                            email: formRegisterValues.email,
-                            role: 'User_Role'
+                            uid: data.uid,
+                            name: data.name,
+                            surname: data.surname,
+                            email: data.email,
+                            role: data.role
                         });
                     } else {
                         console.log(data.message);

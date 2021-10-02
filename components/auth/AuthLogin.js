@@ -4,12 +4,13 @@ import {SessionContext} from '../../providers/sessionContext';
 import {useForm} from '../../hooks/useForm';
 
 const AuthLogin = () => {
-    const {setSession} = useContext(SessionContext);
+    const {session, setSession} = useContext(SessionContext);
 
     const [formLoginValues, handleLoginInputChange] = useForm({
         email: '',
         password: ''
     });
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,18 +30,22 @@ const AuthLogin = () => {
                 .then(data => {
                     if (data.success) {
                         console.log('Ingreso exitoso');
+                        console.log(data)
                         setSession(
                             {
-                                email: formLoginValues.email,
-                                password: formLoginValues.password
+                                uid: data.uid,
+                                name: data.name,
+                                surname: data.surname,
+                                email: data.email,
+                                role: data.role
                             });
                     } else {
+                        console.log(data)
                         console.log(data.message);
                     }
-                })
+                });
         }
     };
-
     return (
         <form className={Styles.inputLogin}>
             <input
@@ -72,5 +77,4 @@ const AuthLogin = () => {
         </form>
     );
 };
-
 export default AuthLogin;
