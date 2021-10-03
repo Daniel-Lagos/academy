@@ -3,9 +3,11 @@ import Icon from '@mdi/react';
 import {mdiAccountCircle} from '@mdi/js';
 import AuthLogin from './AuthLogin';
 import AuthRegister from './AuthRegister';
+import {Button} from "react-bootstrap";
+import {useState} from "react";
 
 const AuthScreen = () => {
-    const value = true;
+    const [value, setValue] = useState(true);
 
     return (
         <div className={Styles.screen}>
@@ -16,6 +18,18 @@ const AuthScreen = () => {
                         <Icon className={Styles.photo} path={mdiAccountCircle}/>
                         {(value ? <AuthLogin/> : <AuthRegister/>)}
                     </div>
+                    {value ?
+                        <>
+                            <hr/>
+                            <button className={Styles.buttonLogin} onClick={() => {
+                                setValue(false)
+                            }}>
+                                Registrarse
+                                {console.log(value)}
+                            </button>
+                        </>
+
+                        : <span>{}</span>}
                 </div>
             </div>
         </div>

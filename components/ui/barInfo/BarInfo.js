@@ -19,7 +19,7 @@ export default function BarInfo({nick, roleF}) {
     });
 
     const [formUploadValues, handleUploadInputChange] = useForm({
-       file:''
+       resource:''
     });
 
     const handleSubmit = async (e) => {
@@ -27,10 +27,9 @@ export default function BarInfo({nick, roleF}) {
         e.preventDefault();
         await fetch(`https://backend-academy.herokuapp.com/api/user/${id}`, {
             method: 'PUT',
-            credentials: 'include',
+            credentials: 'same-origin',
             headers: {
-                'Content/Type': 'application/json',
-                'Accept': '*/*'
+                'Content/Type': 'application/json'
             },
             body: JSON.stringify({
                 uid: id,
@@ -58,7 +57,8 @@ export default function BarInfo({nick, roleF}) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                file:formUploadValues.file
+                userId: id,
+                resource:formUploadValues.resource
             })
         }).then(response => response.json())
             .then(data => {
@@ -132,8 +132,8 @@ export default function BarInfo({nick, roleF}) {
                             <Accordion.Header>Subir Recursos</Accordion.Header>
                             <Accordion.Body>
                                     <Form.Group controlId="formFile" className="mb-3">
-                                        <Form.Control type="file" name={'file'}
-                                                      value={formUploadValues.file}
+                                        <Form.Control type="file" name={'resource'}
+                                                      value={formUploadValues.resource}
                                                       onChange={handleUpdateInputChange}/>
                                     </Form.Group>
                                     <button
