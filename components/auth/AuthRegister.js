@@ -2,6 +2,8 @@ import Styles from './AuthScreen.module.css';
 import {useContext} from 'react';
 import {SessionContext} from '../../providers/sessionContext';
 import {useForm} from '../../hooks/useForm';
+import Swal from 'sweetalert2'
+
 
 const AuthRegister = () => {
     const {setSession} = useContext(SessionContext);
@@ -18,6 +20,10 @@ const AuthRegister = () => {
         e.preventDefault();
         if (formRegisterValues.name === '' || formRegisterValues.surname === '' || formRegisterValues.password === '' ||
             formRegisterValues.email === '') {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Faltan campos por rellenar',
+            });
             console.log('Campos vacios')
         } else {
             fetch('https://backend-academy.herokuapp.com/api/auth/new',
@@ -37,6 +43,10 @@ const AuthRegister = () => {
                 .then(data => {
                     if (data.success) {
                         console.log('Registro exitoso')
+                        Swal.fire({
+                           icon: 'success',
+                           title: `El usuario ${data.name} ha sido registrado}`
+                        });
                         setSession({
                             uid: data.uid,
                             name: data.name,
@@ -58,6 +68,7 @@ const AuthRegister = () => {
                 type="text"
                 value={formRegisterValues.name}
                 onChange={handRegisterInputChangue}
+                autoComplete={'off'}
             />
             <br/>
             <input
@@ -66,6 +77,7 @@ const AuthRegister = () => {
                 type="text"
                 value={formRegisterValues.surname}
                 onChange={handRegisterInputChangue}
+                autoComplete={'off'}
             />
             <br/>
             <input
@@ -74,6 +86,7 @@ const AuthRegister = () => {
                 type="password"
                 value={formRegisterValues.password}
                 onChange={handRegisterInputChangue}
+                autoComplete={'off'}
             />
             <input
                 name={'email'}
@@ -81,6 +94,7 @@ const AuthRegister = () => {
                 type="email"
                 value={formRegisterValues.email}
                 onChange={handRegisterInputChangue}
+                autoComplete={'off'}
             />
             <input
                 name={'role'}
@@ -94,11 +108,8 @@ const AuthRegister = () => {
                 type="onSubmit"
                 onClick={handleSubmit}
             >
-                <span>Sign In</span>
+                <span>Registrarse</span>
             </button>
-            {formRegisterValues.name === '' || formRegisterValues.surname === '' ||
-            formRegisterValues.password === '' || formRegisterValues.email === '' ?
-                <span className={Styles.error}>Rellene los campos vacios</span> : ''}
         </form>
     );
 }

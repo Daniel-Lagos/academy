@@ -67,6 +67,10 @@
     text-align: center;
 }
 
+.inputLogin input:-webkit-autofill{
+
+}
+
 .buttonLogin {
     background: var(--primary-color);
     border: none;
@@ -82,7 +86,7 @@
 }
 
 .error {
-    text-decoration: underline red;
     font-size: 14px;
     color: red;
+    display: inline-block;
 }

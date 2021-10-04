@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {Accordion, Form} from "react-bootstrap";
 import {SessionContext} from "../../../providers/sessionContext";
 import {useForm} from "../../../hooks/useForm";
+import Swal from 'sweetalert2';
 
 export default function BarInfo({nick, roleF}) {
 
@@ -42,8 +43,16 @@ export default function BarInfo({nick, roleF}) {
         }).then(response => response.json())
             .then(data => {
                 if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Han sido actulizados sus datos'
+                    });
                     console.log(data);
                 } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'No se actulizaron sus datos'
+                    });
                     console.error('ERROR');
                 }
             }).catch(error => {
@@ -63,8 +72,30 @@ export default function BarInfo({nick, roleF}) {
             body: dataFiles
         }).then(response => response.json())
             .then(data => {
-                console.log(data);
+                if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Los archivos han sido subidos'
+                    });
+                    console.log('Registro exitoso')
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error en la subida de archivos'
+                    });
+                    console.log(data.message);
+                }
             });
+    }
+
+    const handleSubmitDelete = (e) => {
+        e.preventDefault();
+        fetch(`https://backend-academy.herokuapp.com/api/user/${id}`, {
+            method: 'DELETE'
+        }).then(response => response.json)
+            .then(data => {
+
+            })
     }
 
     return (
@@ -129,7 +160,7 @@ export default function BarInfo({nick, roleF}) {
                 <hr/>
                 {session.role === 'Teacher_Role' ?
                     <Accordion>
-                        <Accordion.Item eventKey={'1'}>
+                        <Accordion.Item eventKey={'0'}>
                             <Accordion.Header>Subir Recursos</Accordion.Header>
                             <Accordion.Body>
                                 <Form.Group controlId="formFile" className="mb-3">
@@ -145,6 +176,20 @@ export default function BarInfo({nick, roleF}) {
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion> : <span>{}</span>}
+                <hr/>
+                <Accordion>
+                    <Accordion.Item eventKey={'0'}>
+                        <Accordion.Header>Borrar Cuenta</Accordion.Header>
+                        <Accordion.Body>
+                            <button
+                                className={Styles.buttonLogin}
+                                type="onSubmit"
+                                onClick={handleSubmitDelete}>
+                                <span>Subir</span>
+                            </button>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                </Accordion>
             </div>
         </main>
     );

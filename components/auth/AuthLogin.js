@@ -2,6 +2,7 @@ import Styles from './AuthScreen.module.css';
 import {useContext} from 'react';
 import {SessionContext} from '../../providers/sessionContext';
 import {useForm} from '../../hooks/useForm';
+import Swal from 'sweetalert2';
 
 const AuthLogin = () => {
     const {session, setSession} = useContext(SessionContext);
@@ -11,10 +12,13 @@ const AuthLogin = () => {
         password: ''
     });
 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (formLoginValues.email === '' || formLoginValues.password === '') {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Faltan campos por rellenar',
+            });
             console.log('Campos vacios')
         } else {
             fetch('https://backend-academy.herokuapp.com/api/auth', {
@@ -40,6 +44,10 @@ const AuthLogin = () => {
                                 role: data.role
                             });
                     } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'La contraseña/email son incorrectos'
+                        });
                         console.log(data)
                         console.log(data.message);
                     }
@@ -54,6 +62,7 @@ const AuthLogin = () => {
                 type="email"
                 value={formLoginValues.email}
                 onChange={handleLoginInputChange} required
+                autoComplete={'off'}
             />
             <br/>
             <input
@@ -62,6 +71,7 @@ const AuthLogin = () => {
                 type="password"
                 value={formLoginValues.password}
                 onChange={handleLoginInputChange} required
+                autoComplete={'off'}
             />
             <button
                 className={Styles.buttonLogin}
@@ -69,8 +79,6 @@ const AuthLogin = () => {
                 onClick={handleSubmit}>
                 <span>Ingresar</span>
             </button>
-            {formLoginValues.password === '' || formLoginValues.email === '' ?
-                <span className={Styles.error}>Rellene los campos vacios</span> : ''}
         </form>
     );
 };
