@@ -1,11 +1,10 @@
 import Styles from './BarInfo.module.css';
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import Image from 'next/image';
 import Link from 'next/link';
 import {Accordion, Form} from "react-bootstrap";
 import {SessionContext} from "../../../providers/sessionContext";
 import {useForm} from "../../../hooks/useForm";
-
 
 export default function BarInfo({nick, roleF}) {
 
@@ -18,9 +17,12 @@ export default function BarInfo({nick, roleF}) {
         password: ''
     });
 
-    const [formUploadValues, handleUploadInputChange] = useForm({
-       resource:''
-    });
+    const [resource, setResource] = useState({});
+
+    const handleUploadInputChange = async (e) => {
+        e.preventDefault();
+        setResource(e.target.files[0]);
+    };
 
     const handleSubmit = async (e) => {
         console.log('id > ', id);
@@ -46,20 +48,19 @@ export default function BarInfo({nick, roleF}) {
                 }
             }).catch(error => {
                 console.log(error);
-            })
+            });
     }
 
+
     const handleSubmitFiles = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
+        let dataFiles = new FormData();
+        dataFiles.append('resource', resource);
+        dataFiles.append('userId', id)
+
         fetch('https://backend-academy.herokuapp.com/api/resource', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                userId: id,
-                resource:formUploadValues.resource
-            })
+            body: dataFiles
         }).then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -131,17 +132,16 @@ export default function BarInfo({nick, roleF}) {
                         <Accordion.Item eventKey={'1'}>
                             <Accordion.Header>Subir Recursos</Accordion.Header>
                             <Accordion.Body>
-                                    <Form.Group controlId="formFile" className="mb-3">
-                                        <Form.Control type="file" name={'resource'}
-                                                      value={formUploadValues.resource}
-                                                      onChange={handleUpdateInputChange}/>
-                                    </Form.Group>
-                                    <button
-                                        className={Styles.buttonLogin}
-                                        type="onSubmit"
-                                        onClick={handleSubmitFiles}>
-                                        <span>Subir</span>
-                                    </button>
+                                <Form.Group controlId="formFile" className="mb-3">
+                                    <Form.Control type="file" name={'resource'}
+                                                  onChange={handleUploadInputChange}/>
+                                </Form.Group>
+                                <button
+                                    className={Styles.buttonLogin}
+                                    type="onSubmit"
+                                    onClick={handleSubmitFiles}>
+                                    <span>Subir</span>
+                                </button>
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion> : <span>{}</span>}

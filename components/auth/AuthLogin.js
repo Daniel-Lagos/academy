@@ -50,7 +50,7 @@ const AuthLogin = () => {
         <form className={Styles.inputLogin}>
             <input
                 name={'email'}
-                placeholder="Email"
+                placeholder="Correo"
                 type="email"
                 value={formLoginValues.email}
                 onChange={handleLoginInputChange} required
@@ -58,19 +58,16 @@ const AuthLogin = () => {
             <br/>
             <input
                 name={'password'}
-                placeholder="Password"
+                placeholder="Contraseña"
                 type="password"
                 value={formLoginValues.password}
                 onChange={handleLoginInputChange} required
             />
-            <p className={Styles.passwordText}><a href="www.google.com"
-                                                  style={{color: 'black'}}> Forgot
-                Password?</a></p>
             <button
                 className={Styles.buttonLogin}
                 type="onSubmit"
                 onClick={handleSubmit}>
-                <span>Log in</span>
+                <span>Ingresar</span>
             </button>
             {formLoginValues.password === '' || formLoginValues.email === '' ?
                 <span className={Styles.error}>Rellene los campos vacios</span> : ''}
