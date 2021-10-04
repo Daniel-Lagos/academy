@@ -13,7 +13,7 @@ const AuthScreen = () => {
         <div className={Styles.screen}>
             <div className={Styles.authContent}>
                 <div>
-                    <h2 className={Styles.titleLogin}>{(value ? 'Account' : 'Create Account')}</h2>
+                    <h2 className={Styles.titleLogin}>{(value ? 'Cuenta' : 'Crear cuenta')}</h2>
                     <div className={Styles.loginContent}>
                         <Icon className={Styles.photo} path={mdiAccountCircle}/>
                         {(value ? <AuthLogin/> : <AuthRegister/>)}
@@ -25,7 +25,6 @@ const AuthScreen = () => {
                                 setValue(false)
                             }}>
                                 Registrarse
-                                {console.log(value)}
                             </button>
                         </>
 

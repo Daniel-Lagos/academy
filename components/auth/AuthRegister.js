@@ -54,7 +54,7 @@ const AuthRegister = () => {
         <form className={Styles.inputLogin}>
             <input
                 name={'name'}
-                placeholder="Name"
+                placeholder="Nombre"
                 type="text"
                 value={formRegisterValues.name}
                 onChange={handRegisterInputChangue}
@@ -62,7 +62,7 @@ const AuthRegister = () => {
             <br/>
             <input
                 name={'surname'}
-                placeholder="Surname"
+                placeholder="Apellido"
                 type="text"
                 value={formRegisterValues.surname}
                 onChange={handRegisterInputChangue}
@@ -70,14 +70,14 @@ const AuthRegister = () => {
             <br/>
             <input
                 name={'password'}
-                placeholder="Password"
+                placeholder="Contraseña"
                 type="password"
                 value={formRegisterValues.password}
                 onChange={handRegisterInputChangue}
             />
             <input
                 name={'email'}
-                placeholder="name@example.com"
+                placeholder="Correo"
                 type="email"
                 value={formRegisterValues.email}
                 onChange={handRegisterInputChangue}

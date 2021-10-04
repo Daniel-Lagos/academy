@@ -62,6 +62,11 @@
     display: none;
 }
 
+.inputLogin input::placeholder {
+    color: aliceblue;
+    text-align: center;
+}
+
 .buttonLogin {
     background: var(--primary-color);
     border: none;
