@@ -35,5 +35,4 @@ yarn-error.log*
 
 /.idea/
 
-profile.png
 .env

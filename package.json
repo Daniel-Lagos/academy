@@ -12,6 +12,7 @@
     "@mdi/font": "^5.8.55",
     "@mdi/js": "^5.8.55",
     "@mdi/react": "^1.4.0",
+    "@sweetalert2/theme-dark": "^5.0.5",
     "bootstrap": "^5.1.1",
     "dotenv": "^10.0.0",
     "isomorphic-fetch": "^3.0.0",
@@ -20,6 +21,8 @@
     "react-bootstrap": "^2.0.0-rc.0",
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
-    "start": "^5.1.0"
+    "start": "^5.1.0",
+    "sweetalert2": "^11.1.7",
+    "sweetalert2-react-content": "^4.1.1"
   }
 }
