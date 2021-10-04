@@ -11,7 +11,7 @@ export default function Navbar() {
                             <a className='nav-link ' title='Principal Page'
                                rel="noopener noreferrer">ACADEMY</a>
                         </Link>
-                        <Link href='/Profile'>
+                        <Link href='/'>
                             <a className='nav-link' title='Profile'>Perfil</a>
                         </Link>
                     </div>
