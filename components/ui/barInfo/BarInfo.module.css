@@ -16,16 +16,17 @@
 }
 
 .test h6 {
-    text-align: left;
+    text-align: center;
     color: whitesmoke;
     margin: 10px;
 }
-.test span{
+
+.test span {
     color: whitesmoke;
     font-weight: bold;
 }
 
-.imageCenter{
+.imageCenter {
     margin-top: 15px;
     text-align: center;
 }
@@ -44,9 +45,14 @@
     text-align: center;
     margin-top: 10px;
 }
-.test a{
+
+.second h4 {
+    text-align: center;
+}
+
+.test a {
     text-decoration: none;
-    color: rgb(103,89,136);
+    color: rgb(103, 89, 136);
     font-weight: bold;
 }
 
@@ -73,4 +79,15 @@
     font-size: 20px;
     height: 3.5rem;
     width: 100%;
+}
+
+.buttonLoginDelete {
+    background: #fd4249;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    height: 3rem;
+    width: 50%;
+    margin-left: 25%;
 }
