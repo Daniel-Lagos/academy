@@ -24,7 +24,7 @@ export const HomeScreen = () => {
     return (
         <Container fluid={true}>
             <Row>
-                <Col>
+                <Col xs={2}>
                     <Navbar/>
                 </Col>
                 <Col xs={7}>

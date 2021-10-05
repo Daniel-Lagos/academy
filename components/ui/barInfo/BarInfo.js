@@ -123,17 +123,12 @@ export default function BarInfo({nick, roleF}) {
     return (
         <main className={Styles.main}>
             <div className={Styles.test}>
-                <h6>Academy profile</h6>
+                <h6>Perfil Academy</h6>
                 <div className={Styles.imageCenter}>
                     <Image className={Styles.image} src='/profile.png' width={160} height={160}/>
                 </div>
                 <span>{nick}</span><br/>
                 <span>{roleF}</span><br/>
-                <Link href={'/Profile'}>
-                    <a>
-                        Personal Profile
-                    </a>
-                </Link>
             </div>
             <div className={Styles.second}>
                 <Accordion>
