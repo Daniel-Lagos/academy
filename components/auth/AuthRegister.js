@@ -45,7 +45,9 @@ const AuthRegister = () => {
                         console.log('Registro exitoso')
                         Swal.fire({
                            icon: 'success',
-                           title: `El usuario ${data.name} ha sido registrado}`
+                           title: `El usuario ${data.name} ha sido registrado`,
+                            timer: 3000,
+                            timerProgressBar: true
                         });
                         setSession({
                             uid: data.uid,

@@ -11,6 +11,7 @@ export default function BarInfo({nick, roleF}) {
 
     const {session} = useContext(SessionContext);
     let id = session.uid;
+    let nameUser = session.name;
 
     const [formUpdateValues, handleUpdateInputChange] = useForm({
         name: '',
@@ -75,13 +76,13 @@ export default function BarInfo({nick, roleF}) {
                 if (data.success) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Los archivos han sido subidos'
+                        title: 'El archivo ha sido subido'
                     });
                     console.log('Registro exitoso')
                 } else {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Error en la subida de archivos'
+                        title: 'Error en la subida del archivo'
                     });
                     console.log(data.message);
                 }
@@ -90,12 +91,33 @@ export default function BarInfo({nick, roleF}) {
 
     const handleSubmitDelete = (e) => {
         e.preventDefault();
-        fetch(`https://backend-academy.herokuapp.com/api/user/${id}`, {
-            method: 'DELETE'
-        }).then(response => response.json)
-            .then(data => {
+        Swal.fire({
+            icon: 'question',
+            text: `${nameUser} ¿Estas seguro que quiere eliminar su cuenta?`,
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, estoy seguro',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://backend-academy.herokuapp.com/api/user/${id}`, {
+                    method: 'DELETE'
+                }).then(response => response.json)
+                    .then(data => {
+                        console.log(data);
+                    });
+                Swal.fire(
+                    'Cuenta eliminada',
+                    'Tu cuenta ha sido eliminada',
+                    'success'
+                );
+            }
+        });
+    }
 
-            })
+    const leave = (e) => {
+        window.location.href = '/'
     }
 
     return (
@@ -181,15 +203,23 @@ export default function BarInfo({nick, roleF}) {
                     <Accordion.Item eventKey={'0'}>
                         <Accordion.Header>Borrar Cuenta</Accordion.Header>
                         <Accordion.Body>
+                            <h4>Dale click al boton para eliminar su cuenta</h4>
                             <button
-                                className={Styles.buttonLogin}
+                                className={Styles.buttonLoginDelete}
                                 type="onSubmit"
                                 onClick={handleSubmitDelete}>
-                                <span>Subir</span>
+                                <span>Eliminar Cuenta</span>
                             </button>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
+                <hr/>
+                <button
+                    className={Styles.buttonLoginDelete}
+                    type="onSubmit"
+                    onClick={leave}>
+                    <span>Cerrar sesión</span>
+                </button>
             </div>
         </main>
     );
