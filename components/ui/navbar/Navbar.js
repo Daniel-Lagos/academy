@@ -6,7 +6,7 @@ export default function Navbar() {
     return (
         <>
             <div className={Styles.main}>
-                <Stack gap={5}>
+                <Stack gap={4}>
                     <div className={Styles.first}>
                         <Link href='/'>
                             <a className='nav-link ' title='Principal Page'

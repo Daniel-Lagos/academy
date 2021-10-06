@@ -29,18 +29,7 @@ export const HomeScreen = () => {
                 </Col>
                 <Col xs={7}>
                     <FormSearch/>
-                    <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                               duration={'25:00'}/>
-                    <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                               duration={'25:00'}/>
-                    <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                               duration={'25:00'}/>
-                    <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                               duration={'25:00'}/>
-                    <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                               duration={'25:00'}/>
-                    <VideoInfo views={'27,222'} likes={'7,500'} nameAuthor={'Julio Profe'}
-                               duration={'25:00'}/>
+                    <VideoInfo/>
                 </Col>
                 <Col xs={3}>
                     <BarInfo nick={`${name} ${surname}`}
