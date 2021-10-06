@@ -11,13 +11,12 @@ const VideoCard = ({ url, name, surname, role }) => {
             <video
               src={url}
               controls>
-              Video no soportado....
+              Video no soportado...
             </video>
           </Ratio>
         </Col>
         <Col sm={6} className={Styles.contTwo}>
-          <h4>Titulo del video segun la categoria desde la API de Youtube
-            🚀</h4>
+          <h4>Video educativo</h4>
           <p>👁‍🗨 22.222 views &nbsp;&nbsp;&nbsp;&nbsp; 👍🏻 75 likes</p>
           <h6>Subido por: {name} {surname}</h6>
           <h6>Rol: {role}</h6>

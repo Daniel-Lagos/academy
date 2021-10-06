@@ -33,7 +33,7 @@ export default function BarInfo({nick, roleF}) {
             method: 'PUT',
             credentials: 'same-origin',
             headers: {
-                'Content/Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 uid: id,
@@ -78,13 +78,11 @@ export default function BarInfo({nick, roleF}) {
                         icon: 'success',
                         title: 'El archivo ha sido subido'
                     });
-                    console.log('Registro exitoso')
                 } else {
                     Swal.fire({
                         icon: 'error',
                         title: 'Error en la subida del archivo'
                     });
-                    console.log(data.message);
                 }
             });
     }
