@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 
 export default function BarInfo({nick, roleF}) {
 
-    const {session} = useContext(SessionContext);
+    const {session, setSession} = useContext(SessionContext);
     let id = session.uid;
     let nameUser = session.name;
 
@@ -104,12 +104,14 @@ export default function BarInfo({nick, roleF}) {
                 }).then(response => response.json)
                     .then(data => {
                         console.log(data);
+                        setSession({});
                     });
                 Swal.fire(
                     'Cuenta eliminada',
                     'Tu cuenta ha sido eliminada',
                     'success'
                 );
+
             }
         });
     }
