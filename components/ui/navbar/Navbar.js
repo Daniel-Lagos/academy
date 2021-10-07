@@ -25,6 +25,15 @@ export default function Navbar() {
                     <div className={Styles.image}>
                         <img src={'/video.svg'} alt={'Logo'} width={100} height={100}/>
                     </div>
+                    <div className={Styles.second}>
+                        <h3>Created by:</h3>
+                    </div>
+                    <div className={Styles.second}>
+                        <a href={'https://github.com/Daniel-Lagos'}>Daniel Lagos</a>
+                    </div>
+                    <div className={Styles.second}>
+                        <a href={'https://github.com/ArgeNH'}>Arge Niño</a>
+                    </div>
                 </Stack>
             </div>
         </>

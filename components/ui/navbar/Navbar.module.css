@@ -19,6 +19,24 @@
     font-size: 1.5em;
 }
 
+.second {
+    text-align: center;
+}
+
+.second a {
+    color: aliceblue;
+    font-size: 1.2em;
+    transition: all 500ms ease-in-out;
+}
+
+.second a:hover {
+    transform: scale(1.4);
+}
+
+.second h3 {
+    color: aliceblue;
+}
+
 .first a:hover {
     color: #74a8f6;
     text-shadow: 3px 3px 16px #333;
