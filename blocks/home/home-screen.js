@@ -20,7 +20,7 @@ export const HomeScreen = () => {
   } else {
     role = 'Docente';
   }
-  const { data, error } = useSWR(
+  const { data } = useSWR(
     'https://backend-academy.herokuapp.com/api/user/', fetcher);
 
   return (
@@ -31,12 +31,15 @@ export const HomeScreen = () => {
         </Col>
         <Col xs={7}>
           <FormSearch/>
+          <iframe src={'http://localhost:3000/contactos-enriquecidos'}/>
+          <iframe src={'https://www.youtube.com/watch?v=0PMKa3s2xp8&list=RD0PMKa3s2xp8&start_radio=1'}/>
           {
             data?.users?.map((user) => {
               return user.content.map(
                 (content, index) =>
                   <VideoInfo key={index} name={user.name} surname={user.surname}
-                             role={user.role} url={content}/>);
+                             role={user.role}
+                             url={content}/>);
             })
           }
 

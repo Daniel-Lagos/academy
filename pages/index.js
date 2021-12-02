@@ -4,9 +4,7 @@ import { SessionContext } from '../providers/sessionContext';
 import { HomeScreen } from '../blocks/home';
 
 export default function Home() {
-  const [session, setSession] = useState({
-    email: 'cp2'
-  });
+  const [session, setSession] = useState({});
 
   return (
     <>
