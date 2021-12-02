@@ -32,7 +32,8 @@ export const HomeScreen = () => {
         <Col xs={7}>
           <FormSearch/>
           <iframe src={'http://localhost:3000/contactos-enriquecidos'}/>
-          <iframe src={'https://www.youtube.com/watch?v=0PMKa3s2xp8&list=RD0PMKa3s2xp8&start_radio=1'}/>
+          <iframe
+            src={'https://www.youtube.com/watch?v=0PMKa3s2xp8&list=RD0PMKa3s2xp8&start_radio=1'}/>
           {
             data?.users?.map((user) => {
               return user.content.map(
@@ -42,7 +43,6 @@ export const HomeScreen = () => {
                              url={content}/>);
             })
           }
-
         </Col>
         <Col xs={3}>
           <BarInfo nick={`${name} ${surname}`}
