@@ -9,15 +9,9 @@ import Swal from 'sweetalert2';
 
 export default function BarInfo({ nick, roleF }) {
 
-<<<<<<< HEAD
-  const { session } = useContext(SessionContext);
+  const { session, setSession } = useContext(SessionContext);
   let id = session.uid;
   let nameUser = session.name;
-=======
-    const {session, setSession} = useContext(SessionContext);
-    let id = session.uid;
-    let nameUser = session.name;
->>>>>>> 6cda1a3694bc271de27f9b0dd6ea31ec5cc13f74
 
   const [formUpdateValues, handleUpdateInputChange] = useForm({
     name: '',
@@ -32,7 +26,6 @@ export default function BarInfo({ nick, roleF }) {
     setResource(e.target.files[0]);
   };
 
-<<<<<<< HEAD
   const handleSubmit = async (e) => {
     e.preventDefault();
     await fetch(`https://backend-academy.herokuapp.com/api/user/${id}`, {
@@ -65,42 +58,6 @@ export default function BarInfo({ nick, roleF }) {
         console.log(error);
       });
   };
-=======
-    const handleSubmit = async (e) => {
-        console.log('id > ', id);
-        e.preventDefault();
-        await fetch(`https://backend-academy.herokuapp.com/api/user/${id}`, {
-            method: 'PUT',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                uid: id,
-                name: formUpdateValues.name,
-                surname: formUpdateValues.surname,
-                password: formUpdateValues.password
-            })
-        }).then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Han sido actulizados sus datos'
-                    });
-                    console.log(data);
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'No se actulizaron sus datos'
-                    });
-                    console.error('ERROR');
-                }
-            }).catch(error => {
-                console.log(error);
-            });
-    }
->>>>>>> 6cda1a3694bc271de27f9b0dd6ea31ec5cc13f74
 
 
   const handleSubmitFiles = async (e) => {
@@ -109,7 +66,6 @@ export default function BarInfo({ nick, roleF }) {
     dataFiles.append('resource', resource);
     dataFiles.append('userId', id);
 
-<<<<<<< HEAD
     fetch('https://backend-academy.herokuapp.com/api/resource', {
       method: 'POST',
       body: dataFiles
@@ -157,55 +113,6 @@ export default function BarInfo({ nick, roleF }) {
       }
     });
   };
-=======
-        fetch('https://backend-academy.herokuapp.com/api/resource', {
-            method: 'POST',
-            body: dataFiles
-        }).then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'El archivo ha sido subido'
-                    });
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error en la subida del archivo'
-                    });
-                }
-            });
-    }
-
-    const handleSubmitDelete = (e) => {
-        e.preventDefault();
-        Swal.fire({
-            icon: 'question',
-            text: `${nameUser} ¿Estas seguro que quiere eliminar su cuenta?`,
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, estoy seguro',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`https://backend-academy.herokuapp.com/api/user/${id}`, {
-                    method: 'DELETE'
-                }).then(response => response.json)
-                    .then(data => {
-                        console.log(data);
-                        setSession({});
-                    });
-                Swal.fire(
-                    'Cuenta eliminada',
-                    'Tu cuenta ha sido eliminada',
-                    'success'
-                );
-
-            }
-        });
-    }
->>>>>>> 6cda1a3694bc271de27f9b0dd6ea31ec5cc13f74
 
   const leave = (e) => {
     window.location.href = '/';
