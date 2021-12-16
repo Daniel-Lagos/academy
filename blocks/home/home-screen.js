@@ -31,7 +31,7 @@ export const HomeScreen = () => {
         </Col>
         <Col xs={7}>
           <FormSearch/>
-          <iframe src={'http://localhost:3000/contactos-enriquecidos'}/>
+          <iframe src={'http://localhost:3000/contactos-enriquecidos?fr_client_id=108082&start_date=2021-12-07T00:00&end_date=2021-12-15T00:00'}/>
           <iframe
             src={'https://www.youtube.com/watch?v=0PMKa3s2xp8&list=RD0PMKa3s2xp8&start_radio=1'}/>
           {
